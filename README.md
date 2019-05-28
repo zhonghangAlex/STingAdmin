@@ -23,6 +23,7 @@ STing-admin
 ![image](https://github.com/zhonghangAlex/STing-admin/blob/master/src/assets/images/show2.jpg)
 ![image](https://github.com/zhonghangAlex/STing-admin/blob/master/src/assets/images/show3.jpg)
 ![image](https://github.com/zhonghangAlex/STing-admin/blob/master/src/assets/images/show4.jpg)
+![image](https://github.com/zhonghangAlex/STing-admin/blob/master/src/assets/images/show5.jpg)
 
 ## Getting started
 ```bush
