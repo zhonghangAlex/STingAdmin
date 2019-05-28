@@ -119,15 +119,6 @@ export default [
               title: '产品维护统计'
             },
             component: () => import('@/view/total_mag/table_mag/product_maintain_data.vue')
-          },
-          {
-            path: 'car_monitor_data',
-            name: '车辆监控平台',
-            meta: {
-              icon: 'md-radio-button-on',
-              title: '车辆监控平台'
-            },
-            component: () => import('@/view/total_mag/table_mag/car_monitor_data.vue')
           }
         ]
       },

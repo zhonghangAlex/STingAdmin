@@ -3,7 +3,6 @@
     <Row :gutter="14" >
       <i-col span="24">
         <Card :title="$route.name">
-          <div id="allmap"></div>
         </Card>
       </i-col>
     </Row>

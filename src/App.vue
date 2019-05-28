@@ -24,4 +24,11 @@ html,body{
 #app {
   .size;
 }
+/*百度地图样式修改*/
+.BMap_cpyCtrl {
+  display: none;
+}
+.anchorBL {
+  display: none;
+}
 </style>
