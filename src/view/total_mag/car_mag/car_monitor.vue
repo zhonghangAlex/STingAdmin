@@ -11,9 +11,27 @@
       </i-col>
       <i-col span="18" >
         <Card :title="$route.name" style="height: 790px;">
+          <Button type="primary" href="#" slot="extra" @click.native="open_drawer" size="small" style="padding: 4px 10px;">
+            <Icon type="md-information-circle" :size="14"></Icon>
+            信息查询
+          </Button>
           <i-col span="24">
             <div id="allmap" style="height: 700px; width: 100%; position: relative;"></div>
           </i-col>
+          <drag-drawer v-model="drawer_vis"
+           :inner="true"
+           :transfer="false"
+           :width.sync="width_dia"
+           :min-width="680"
+           placement="right"
+           :draggable="true"
+           :scrollable="true">
+            <div slot="header">
+              <Icon type="md-aperture" :size="18"></Icon>
+              <b>车辆数据查询</b>
+            </div>
+            <tables ref="carInfoTable" editable searchable border search-place="top" :columns="carInfoColumns" v-model="carInfoData"></tables>
+          </drag-drawer>
         </Card>
       </i-col>
     </Row>
@@ -28,6 +46,8 @@ import trashLogo from '@/assets/images/net_logo/net_logo_blue.png'
 import sweepLogo from '@/assets/images/net_logo/net_logo_green.png'
 import packageLogo from '@/assets/images/net_logo/net_logo_red.png'
 import noUseLogo from '@/assets/images/net_logo/net_logo_gray.png'
+import DragDrawer from '_c/drag-drawer'
+import Tables from '_c/tables'
 export default {
   name: 'car_monitor',
   data () {
@@ -70,12 +90,108 @@ export default {
       // 坐标点存储
       markers: [],
       // 坐标点聚合定义
-      markerClusterer: {}
+      markerClusterer: {},
+      // 抽屉控制
+      drawer_vis: false,
+      width_dia: 680,
+      // 表格数据
+      carInfoColumns: [
+        {
+          title: '序号',
+          width: 60,
+          align: 'center',
+          key: 'index',
+          searchable: false,
+          render: (h, params) => {
+            return h('div', {
+              style: {
+                backgroundColor: '#3e6ec7',
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                lineHeight: '30px',
+                color: '#ffffff'
+              }
+            }, params.index + 1)
+          }
+        },
+        {
+          title: '车牌号',
+          key: 'car_no',
+          minWidth: 150,
+          align: 'center',
+          searchable: false,
+          render: (h, params) => {
+            return h('Tag', {
+              props: {
+                color: (params.row.car_robot_kind === '智能垃圾车') ? '#3e6ec7' : ((params.row.car_robot_kind === '智能快递车') ? '#c44474' : ((params.row.car_robot_kind === '智能清扫车') ? '#44b8c4' : '#7c818b')),
+                type: 'dot'
+              }
+            }, params.row.car_no)
+          }
+        },
+        {
+          title: '机器人类别',
+          key: 'car_robot_kind',
+          width: 150,
+          align: 'center'
+        },
+        {
+          title: '最近通讯时间',
+          key: 'close_time',
+          minWidth: 130,
+          align: 'center'
+        }
+      ],
+      carInfoData: [
+        {
+          car_no: 'STA3132',
+          car_robot_kind: '智能垃圾车',
+          close_time: '2019-05-28 13:33:51'
+        },
+        {
+          car_no: 'STA2319',
+          car_robot_kind: '智能垃圾车',
+          close_time: '2019-05-28 13:33:51'
+        },
+        {
+          car_no: 'STB2319',
+          car_robot_kind: '智能快递车',
+          close_time: '2019-05-28 15:31:51'
+        },
+        {
+          car_no: 'STC2319',
+          car_robot_kind: '智能清扫车',
+          close_time: '2019-05-28 16:33:33'
+        },
+        {
+          car_no: 'STA2319',
+          car_robot_kind: '智能垃圾车',
+          close_time: '2019-05-28 14:33:27'
+        },
+        {
+          car_no: 'STB2319',
+          car_robot_kind: '智能快递车',
+          close_time: '2019-05-28 13:33:55'
+        },
+        {
+          car_no: 'STD2319',
+          car_robot_kind: '智能巡逻车',
+          close_time: '2019-05-28 16:15:22'
+        },
+        {
+          car_no: 'STA2319',
+          car_robot_kind: '智能垃圾车',
+          close_time: '2019-05-28 11:43:17'
+        }
+      ]
     }
   },
   components: {
     robotRate,
-    cusRate
+    cusRate,
+    DragDrawer,
+    Tables
   },
   methods: {
     // 添加图例
@@ -92,6 +208,10 @@ export default {
       })
       this.markers.push(new BMap.Marker(point, { icon: myIcon }))
       // map.addOverlay(markers)
+    },
+    // 抽屉操作
+    open_drawer () {
+      this.drawer_vis = true
     }
   },
   mounted () {

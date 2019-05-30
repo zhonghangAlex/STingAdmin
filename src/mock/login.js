@@ -1,11 +1,12 @@
 import { getParams } from '@/libs/util'
+import userLogo from '@/assets/images/logo-min.png'
 const USER_MAP = {
   suoting: {
     name: 'suoting',
     user_id: '1',
     access: ['suoting', 'admin'],
     token: 'suoting',
-    avatar: 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
+    avatar: userLogo
   },
   admin: {
     name: 'admin',

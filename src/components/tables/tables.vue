@@ -6,7 +6,7 @@
           <p slot="title">{{ $route.name }}</p>
           <div v-if="searchable && searchPlace === 'top'" class="search-con search-con-top">
             <Select v-model="searchKey" class="search-col">
-              <Option v-for="item in columns" v-if="item.key !== 'action' && item.key !== 'index'" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
+              <Option v-for="item in columns" v-if="item.key !== 'action' && item.key !== 'index' && item.key !== 'car_pic'" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
             </Select>
             <Input style="margin-left: 15px;" @on-change="handleClear" clearable placeholder="输入关键字搜索" class="search-input" v-model="searchValue"/>
             <Button style="margin-left: 15px;" @click="handleSearch" type="primary" icon="ios-search">搜索</Button>
