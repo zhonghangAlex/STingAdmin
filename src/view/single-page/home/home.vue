@@ -45,17 +45,18 @@ export default {
   data () {
     return {
       inforCardData: [
-        { title: '系统管理员', icon: 'md-person-add', count: 9, color: '#2d8cf0' },
         { title: '客户数量', icon: 'logo-snapchat', count: 32, color: '#19be6b' },
-        { title: '已下发配额', icon: 'md-options', count: 642, color: '#ff9900' },
+        { title: '已下发配额', icon: 'md-options', count: 862, color: '#ff9900' },
         { title: '智能垃圾车在用', icon: 'md-trash', count: 322, color: '#ed3f14' },
         { title: '智能快递车在用', icon: 'md-archive', count: 107, color: '#E46CBB' },
-        { title: '智能清洁车在用', icon: 'md-snow', count: 213, color: '#9A66E4' }
+        { title: '智能清洁车在用', icon: 'md-snow', count: 213, color: '#9A66E4' },
+        { title: '智能巡逻车再用', icon: 'md-hand', count: 220, color: '#2d8cf0' }
       ],
       pieData: [
         { value: 107, name: '智能快递车' },
         { value: 322, name: '智能垃圾车' },
-        { value: 213, name: '智能清洁车' }
+        { value: 213, name: '智能清洁车' },
+        { value: 220, name: '智能巡逻车' }
       ]
     }
   },

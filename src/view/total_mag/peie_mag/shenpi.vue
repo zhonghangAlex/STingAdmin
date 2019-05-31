@@ -171,7 +171,7 @@ export default {
       ],
       piData: [
         {
-          apply_no: 'hzcxttkd201904150001',
+          apply_no: 'STPE12301',
           apply_num: 18,
           acc_num: 0,
           apply_status: '未审核',
@@ -181,7 +181,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'qzqwd201905150201',
+          apply_no: 'STPE12971',
           apply_num: 5,
           acc_num: 0,
           apply_status: '已拒绝',
@@ -191,7 +191,7 @@ export default {
           apply_other: '超过额定标准'
         },
         {
-          apply_no: 'vrqwettkd201905140001',
+          apply_no: 'STPE19124岁',
           apply_num: 118,
           acc_num: 0,
           apply_status: '未审核',
@@ -201,7 +201,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'xttkd201905150022',
+          apply_no: 'STPE11351',
           apply_num: 27,
           acc_num: 0,
           apply_status: '未审核',
@@ -211,7 +211,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'cxttkd201906250001',
+          apply_no: 'STPE16361',
           apply_num: 18,
           acc_num: 18,
           apply_status: '审核通过',
@@ -221,7 +221,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'hjwekd201906110021',
+          apply_no: 'STPE12307',
           apply_num: 20,
           acc_num: 10,
           apply_status: '审核通过',
@@ -231,7 +231,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'koittkd201904150001',
+          apply_no: 'STPE13663',
           apply_num: 60,
           acc_num: 0,
           apply_status: '未审核',
@@ -241,7 +241,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'tgttkd201906251101',
+          apply_no: 'STPE12349',
           apply_num: 55,
           acc_num: 55,
           apply_status: '审核通过',
@@ -251,7 +251,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'hhwekd201906110025',
+          apply_no: 'STPE12501',
           apply_num: 20,
           acc_num: 10,
           apply_status: '审核通过',
@@ -261,7 +261,7 @@ export default {
           apply_other: '无备注信息'
         },
         {
-          apply_no: 'koittkd201904150001',
+          apply_no: 'STPE22300',
           apply_num: 60,
           acc_num: 0,
           apply_status: '未审核',

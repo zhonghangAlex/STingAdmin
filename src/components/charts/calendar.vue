@@ -51,9 +51,10 @@ export default {
           },
           radius: _this.pieRadius,
           data: [
-            { name: '新增快递车配额', value: Math.round(Math.random() * 12) },
+            { name: '新增快递车配额', value: Math.round(Math.random() * 8) },
             { name: '新增垃圾车配额', value: Math.round(Math.random() * 20) },
-            { name: '新增清洁车配额', value: Math.round(Math.random() * 12) }
+            { name: '新增清洁车配额', value: Math.round(Math.random() * 8) },
+            { name: '新增巡逻车配额', value: Math.round(Math.random() * 8) }
           ]
         }
       })
@@ -70,7 +71,7 @@ export default {
         x: 'center'
       },
       legend: {
-        data: ['新增快递车配额', '新增垃圾车配额', '新增清洁车配额'],
+        data: ['新增快递车配额', '新增垃圾车配额', '新增清洁车配额', '新增巡逻车配额'],
         bottom: 20
       },
       calendar: {

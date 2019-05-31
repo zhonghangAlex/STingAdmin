@@ -83,6 +83,16 @@ export default {
             { num: 57, label: '维修车辆', icon: 'md-construct' },
             { num: 73.24, label: '车辆使用率', icon: 'md-star-half' }
           ]
+        },
+        {
+          label: '巡逻车',
+          icon: 'md-hand',
+          details: [
+            { num: 220, label: '车辆总数', icon: 'ios-keypad' },
+            { num: 200, label: '在线车辆', icon: 'md-done-all' },
+            { num: 20, label: '维修车辆', icon: 'md-construct' },
+            { num: 90.90, label: '车辆使用率', icon: 'md-star-half' }
+          ]
         }
       ],
 

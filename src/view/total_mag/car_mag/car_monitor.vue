@@ -45,6 +45,7 @@ import cusRate from '_c/charts/cusRate'
 import trashLogo from '@/assets/images/net_logo/net_logo_blue.png'
 import sweepLogo from '@/assets/images/net_logo/net_logo_green.png'
 import packageLogo from '@/assets/images/net_logo/net_logo_red.png'
+import guardLogo from '@/assets/images/net_logo/net_logo_orange.png'
 import noUseLogo from '@/assets/images/net_logo/net_logo_gray.png'
 import DragDrawer from '_c/drag-drawer'
 import Tables from '_c/tables'
@@ -124,7 +125,7 @@ export default {
           render: (h, params) => {
             return h('Tag', {
               props: {
-                color: (params.row.car_robot_kind === '智能垃圾车') ? '#3e6ec7' : ((params.row.car_robot_kind === '智能快递车') ? '#c44474' : ((params.row.car_robot_kind === '智能清扫车') ? '#44b8c4' : '#7c818b')),
+                color: (params.row.car_robot_kind === '智能垃圾车') ? '#3e6ec7' : ((params.row.car_robot_kind === '智能快递车') ? '#c44474' : ((params.row.car_robot_kind === '智能清扫车') ? '#44b8c4' : '#ff9024')),
                 type: 'dot'
               }
             }, params.row.car_no)
@@ -200,9 +201,10 @@ export default {
         trashLogo,
         sweepLogo,
         packageLogo,
+        guardLogo,
         noUseLogo
       ]
-      let myIcon = new BMap.Icon(use_img[parseInt(Math.random() * 3.5)], new BMap.Size(55, 55), {
+      let myIcon = new BMap.Icon(use_img[parseInt(Math.random() * 4.5)], new BMap.Size(55, 55), {
         offset: new BMap.Size(10, 55), // 指定定位位置
         imageOffset: new BMap.Size(0, 0) // 设置图片偏移
       })
@@ -245,10 +247,10 @@ export default {
       // 添加文字说明
       let img_trash = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #3e6ec7; display: inline-block;"></span><span style="display: inline-block; float: right;">在线垃圾车</span><br></div>'
       let img_package = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #c44474; display: inline-block;"></span><span style="display: inline-block; float: right;">在线快递车</span><br></div>'
-      let img_sweep = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #44b8c4; display: inline-block;"></span><span style="display: inline-block; float: right;">在线快递车</span><br></div>'
+      let img_sweep = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #44b8c4; display: inline-block;"></span><span style="display: inline-block; float: right;">在线清扫车</span><br></div>'
+      let img_guard = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #ff9024; display: inline-block;"></span><span style="display: inline-block; float: right;">在线巡逻车</span><br></div>'
       let img_nouse = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #7c818b; display: inline-block;"></span><span style="display: inline-block; float: right;">未连接车辆</span><br></div>'
-      let img_stop = '<div style=""><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #ff9024; display: inline-block;"></span><span style="display: inline-block; float: right;">停车区</span></div>'
-      div.innerHTML = img_trash + img_package + img_sweep + img_nouse + img_stop
+      div.innerHTML = img_trash + img_package + img_sweep + img_guard + img_nouse
       // 设置样式
       div.style.cursor = 'pointer'
       div.style.width = '120px'
