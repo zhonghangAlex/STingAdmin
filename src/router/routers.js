@@ -223,13 +223,13 @@ export default [
         component: () => import('@/view/task_op/task_sweep.vue')
       },
       {
-        path: 'task_other',
-        name: '其他业务板块',
+        path: 'task_guard',
+        name: '社区巡逻业务',
         meta: {
-          icon: 'md-reorder',
-          title: '其他业务板块'
+          icon: 'md-hand',
+          title: '社区巡逻业务'
         },
-        component: () => import('@/view/task_op/task_other.vue')
+        component: () => import('@/view/task_op/task_guard.vue')
       }
     ]
   },
@@ -332,6 +332,37 @@ export default [
               title: '用户运营管理'
             },
             component: () => import('@/view/user_mag/sweep_user_mag/userop_mag.vue')
+          }
+        ]
+      },
+      {
+        path: 'sweep_user_mag',
+        name: '社区巡逻业务用户管理',
+        meta: {
+          access: ['suoting'],
+          icon: 'md-hand',
+          showAlways: true,
+          title: '社区巡逻业务用户管理'
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'sweep_userno_mag',
+            name: '巡逻用户账号管理',
+            meta: {
+              icon: 'md-radio-button-on',
+              title: '用户账号管理'
+            },
+            component: () => import('@/view/user_mag/guard_user_mag/userno_mag.vue')
+          },
+          {
+            path: 'sweep_userop_mag',
+            name: '巡逻用户运营管理',
+            meta: {
+              icon: 'md-radio-button-on',
+              title: '用户运营管理'
+            },
+            component: () => import('@/view/user_mag/guard_user_mag/userop_mag.vue')
           }
         ]
       }
