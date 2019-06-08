@@ -12,7 +12,9 @@ export default {
   props: {
     value: Array,
     text: String,
-    subtext: String
+    subtext: String,
+    orient: String,
+    left: String
   },
   data () {
     return {
@@ -36,8 +38,8 @@ export default {
         tooltip: {
         },
         legend: {
-          orient: 'vertical',
-          left: 'left',
+          orient: this.orient,
+          left: this.left,
           data: legend
         },
         series: [

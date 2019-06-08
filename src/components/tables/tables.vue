@@ -6,7 +6,7 @@
           <p slot="title">{{ $route.name }}</p>
           <div v-if="searchable && searchPlace === 'top'" class="search-con search-con-top">
             <Select v-model="searchKey" class="search-col">
-              <Option v-for="item in columns" v-if="item.key !== 'action' && item.key !== 'index' && item.key !== 'car_pic'" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
+              <Option v-for="item in columns" v-if="filterNotSearch(item.key)" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
             </Select>
             <Input style="margin-left: 15px;" @on-change="handleClear" clearable placeholder="输入关键字搜索" class="search-input" v-model="searchValue"/>
             <Button style="margin-left: 15px;" @click="handleSearch" type="primary" icon="ios-search">搜索</Button>
@@ -56,7 +56,7 @@
     </Row>
     <div v-if="searchable && searchPlace === 'bottom'" class="search-con search-con-top">
       <Select v-model="searchKey" class="search-col">
-        <Option v-for="item in columns" v-if="item.key !== 'action' && item.key !== 'index'" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
+        <Option v-for="item in columns" v-if="filterNotSearch(item.key)" :value="item.key" :key="`search-col-${item.key}`">{{ item.title }}</Option>
       </Select>
       <Input placeholder="输入关键字搜索" class="search-input" v-model="searchValue"/>
       <Button class="search-btn" type="primary"><Icon type="search"/>&nbsp;&nbsp;搜索</Button>
@@ -164,7 +164,18 @@ export default {
       edittingCellId: '',
       edittingText: '',
       searchValue: '',
-      searchKey: ''
+      searchKey: '',
+      notSearch: [
+        'action',
+        'index',
+        'car_pic',
+        'trash_task',
+        'package_task',
+        'security_task',
+        'sweep_task',
+        'maintain_task',
+        'data_task'
+      ]
     }
   },
   methods: {
@@ -233,6 +244,9 @@ export default {
     },
     handleSearch () {
       this.insideTableData = this.value.filter(item => item[this.searchKey].toString().indexOf(this.searchValue) > -1)
+    },
+    filterNotSearch (key) {
+      return !this.notSearch.includes(key)
     },
     handleTableData () {
       this.insideTableData = this.value.map((item, index) => {

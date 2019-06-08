@@ -11,7 +11,7 @@
     <Row :gutter="20" style="margin-top: 10px;">
       <i-col :md="24" :lg="8" style="margin-bottom: 20px;">
         <Card shadow>
-          <chart-pie style="height: 600px;" :value="pieData" text="智能车辆运营比例"></chart-pie>
+          <chart-pie style="height: 600px;" :value="pieData" orient="vertical" left="left" text="智能车辆运营比例"></chart-pie>
         </Card>
       </i-col>
       <!--<i-col :md="24" :lg="16" style="margin-bottom: 20px;">-->
@@ -50,7 +50,7 @@ export default {
         { title: '智能垃圾车在用', icon: 'md-trash', count: 322, color: '#ed3f14' },
         { title: '智能快递车在用', icon: 'md-archive', count: 107, color: '#E46CBB' },
         { title: '智能清洁车在用', icon: 'md-snow', count: 213, color: '#9A66E4' },
-        { title: '智能巡逻车再用', icon: 'md-hand', count: 220, color: '#2d8cf0' }
+        { title: '智能巡逻车在用', icon: 'md-hand', count: 220, color: '#2d8cf0' }
       ],
       pieData: [
         { value: 107, name: '智能快递车' },

@@ -191,7 +191,7 @@ export default {
           apply_other: '超过额定标准'
         },
         {
-          apply_no: 'STPE19124岁',
+          apply_no: 'STPE19124',
           apply_num: 118,
           acc_num: 0,
           apply_status: '未审核',
