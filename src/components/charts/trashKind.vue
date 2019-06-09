@@ -8,7 +8,7 @@ import { on, off } from '@/libs/tools'
 import tdTheme from '_c/charts/theme.json'
 echarts.registerTheme('tdTheme', tdTheme)
 export default {
-  name: 'robotRate',
+  name: 'trashKind',
   data () {
     return {
       dom: null,
@@ -29,7 +29,7 @@ export default {
         }
       },
       legend: {
-        data: ['垃圾车', '快递车', '清扫车', '巡逻车']
+        data: ['废纸', '塑料', '玻璃', '金属', '布料']
       },
       grid: {
         left: '3%',
@@ -50,28 +50,34 @@ export default {
       ],
       series: [
         {
-          name: '垃圾车',
+          name: '废纸',
           type: 'bar',
-          stack: '在线车辆',
+          stack: '回收垃圾数量（kg）',
           data: [232, 247, 260, 256, 268, 270, 280]
         },
         {
-          name: '快递车',
+          name: '塑料',
           type: 'bar',
-          stack: '在线车辆',
+          stack: '回收垃圾数量（kg）',
           data: [44, 51, 56, 59, 67, 63, 67]
         },
         {
-          name: '清扫车',
+          name: '玻璃',
           type: 'bar',
-          stack: '在线车辆',
+          stack: '回收垃圾数量（kg）',
           data: [79, 92, 116, 143, 192, 160, 156]
         },
         {
-          name: '巡逻车',
+          name: '金属',
           type: 'bar',
-          stack: '在线车辆',
-          data: [200, 200, 200, 200, 200, 200, 200]
+          stack: '回收垃圾数量（kg）',
+          data: [100, 150, 200, 220, 200, 194, 220]
+        },
+        {
+          name: '布料',
+          type: 'bar',
+          stack: '回收垃圾数量（kg）',
+          data: [100, 130, 130, 160, 180, 183, 204]
         }
       ]
     }

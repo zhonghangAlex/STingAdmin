@@ -8,7 +8,7 @@ import { on, off } from '@/libs/tools'
 import tdTheme from '_c/charts/theme.json'
 echarts.registerTheme('tdTheme', tdTheme)
 export default {
-  name: 'robotRate',
+  name: 'packageTotal',
   data () {
     return {
       dom: null,
@@ -29,7 +29,7 @@ export default {
         }
       },
       legend: {
-        data: ['垃圾车', '快递车', '清扫车', '巡逻车']
+        data: ['武汉市投放总量']
       },
       grid: {
         left: '3%',
@@ -40,6 +40,7 @@ export default {
       xAxis: [
         {
           type: 'category',
+          boundaryGap: false,
           data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         }
       ],
@@ -50,28 +51,11 @@ export default {
       ],
       series: [
         {
-          name: '垃圾车',
-          type: 'bar',
-          stack: '在线车辆',
+          name: '武汉市投放总量',
+          type: 'line',
+          areaStyle: {},
+          stack: '投放快递数量（件）',
           data: [232, 247, 260, 256, 268, 270, 280]
-        },
-        {
-          name: '快递车',
-          type: 'bar',
-          stack: '在线车辆',
-          data: [44, 51, 56, 59, 67, 63, 67]
-        },
-        {
-          name: '清扫车',
-          type: 'bar',
-          stack: '在线车辆',
-          data: [79, 92, 116, 143, 192, 160, 156]
-        },
-        {
-          name: '巡逻车',
-          type: 'bar',
-          stack: '在线车辆',
-          data: [200, 200, 200, 200, 200, 200, 200]
         }
       ]
     }

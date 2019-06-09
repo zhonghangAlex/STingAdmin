@@ -1,19 +1,11 @@
 <template>
   <div>
     <Row :gutter="14" span="24" >
-      <!--<i-col span="6">-->
-        <!--<Card title="机器人数量比例" style="height: 388px;">-->
-          <!--<robot-rate style="height: 300px;"></robot-rate>-->
-        <!--</Card>-->
-        <!--<Card title="客户单位使用率排名（%）" style="height: 388px; margin-top: 14px;">-->
-          <!--<cus-rate style="height: 300px;"></cus-rate>-->
-        <!--</Card>-->
-      <!--</i-col>-->
       <i-col span="24" >
         <Card :title="$route.name" style="height: 790px;">
           <Button type="primary" href="#" slot="extra" @click.native="open_drawer" size="small" style="padding: 4px 10px;">
-            <Icon type="md-information-circle" :size="14"></Icon>
-            信息查询
+            <Icon type="ios-analytics" :size="14"></Icon>
+            数据统计
           </Button>
           <i-col span="24">
             <div id="allmap_trash" style="height: 700px; width: 100%; position: relative;"></div>
@@ -22,15 +14,50 @@
                        :inner="true"
                        :transfer="false"
                        :width.sync="width_dia"
-                       :min-width="680"
-                       placement="right"
+                       :min-width="1080"
+                       placement="left"
                        :draggable="true"
                        :scrollable="true">
             <div slot="header">
               <Icon type="md-aperture" :size="18"></Icon>
-              <b>车辆数据查询</b>
+              <b>垃圾回收转运业务数据统计</b>
             </div>
-            <tables ref="carInfoTable" editable searchable border search-place="top" :columns="carInfoColumns" v-model="carInfoData"></tables>
+            <Row :gutter="14" span="24" >
+              <i-col :md="24" :lg="12">
+                <Card v-if="drawer_vis" title="各类别垃圾回收量（kg）" style="height: 340px;">
+                  <!--<div slot="extra">-->
+                    <!--<DatePicker :value="trashTotalDate" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="请选择日期区间" style="width: 200px; margin-top: -6px;"></DatePicker>-->
+                  <!--</div>-->
+                  <trash-kind style="height: 250px;"></trash-kind>
+                </Card>
+              </i-col>
+              <i-col :md="24" :lg="12">
+                <Card v-if="drawer_vis" title="各业务单位垃圾回收总量排名（kg）" style="height: 340px;">
+                  <div slot="extra">
+                    <DatePicker :value="trashCompRateDate" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="请选择日期区间" style="width: 200px; margin-top: -6px;"></DatePicker>
+                  </div>
+                  <trash-comp-rate style="height: 250px;"></trash-comp-rate>
+                </Card>
+              </i-col>
+              <i-col :md="24" :lg="24">
+                <Card v-if="drawer_vis" title="各业务单位具体垃圾回收数据" style="height: 340px; margin-top: 14px;">
+                  <div slot="extra">
+                    <Button type="primary" size="small" style="padding: 4px 10px; margin-top: -6px;">
+                      企业选择
+                    </Button>
+                    <Select v-model="compList[0].label" style="width: 180px; margin-left: 10px; margin-top: -5px;">
+                      <Option v-for="item in compList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                    </Select>
+                  </div>
+                  <i-col :md="24" :lg="12">
+                    <trash-detail-kind style="height: 250px;"></trash-detail-kind>
+                  </i-col>
+                  <i-col :md="24" :lg="12">
+                    <chart-pie style="height: 250px;" :value="pieTrashData" orient="horizontal" left="center"></chart-pie>
+                  </i-col>
+                </Card>
+              </i-col>
+            </Row>
           </drag-drawer>
         </Card>
       </i-col>
@@ -40,8 +67,10 @@
 
 <script>
 import BMap from 'BMap'
-import robotRate from '_c/charts/robotRate'
-import cusRate from '_c/charts/cusRate'
+import trashKind from '_c/charts/trashKind'
+import trashCompRate from '_c/charts/trashCompRate'
+import trashDetail from '_c/charts/trashDetailKind'
+import { ChartPie } from '_c/charts'
 import trashLogo from '@/assets/images/net_logo/net_logo_blue.png'
 import sweepLogo from '@/assets/images/net_logo/net_logo_green.png'
 import packageLogo from '@/assets/images/net_logo/net_logo_red.png'
@@ -49,6 +78,7 @@ import guardLogo from '@/assets/images/net_logo/net_logo_orange.png'
 import noUseLogo from '@/assets/images/net_logo/net_logo_gray.png'
 import DragDrawer from '_c/drag-drawer'
 import Tables from '_c/tables'
+import TrashDetailKind from '../../components/charts/trashDetailKind'
 export default {
   name: 'task_trash',
   data () {
@@ -94,103 +124,65 @@ export default {
       markerClusterer: {},
       // 抽屉控制
       drawer_vis: false,
-      width_dia: 680,
-      // 表格数据
-      carInfoColumns: [
+      width_dia: 1080,
+      // 选择排名时间
+      trashCompRateDate: ['2019-06-01', '2019-06-10'],
+      // trashTotalDate: ['2019-06-01', '2019-06-10'],
+      // 公司信息
+      compList: [
         {
-          title: '序号',
-          width: 60,
-          align: 'center',
-          key: 'index',
-          searchable: false,
-          render: (h, params) => {
-            return h('div', {
-              style: {
-                backgroundColor: '#3e6ec7',
-                width: '30px',
-                height: '30px',
-                borderRadius: '50%',
-                lineHeight: '30px',
-                color: '#ffffff'
-              }
-            }, params.index + 1)
-          }
+          value: '建发玺院',
+          label: '建发玺院'
         },
         {
-          title: '车牌号',
-          key: 'car_no',
-          minWidth: 150,
-          align: 'center',
-          searchable: false,
-          render: (h, params) => {
-            return h('Tag', {
-              props: {
-                color: (params.row.car_robot_kind === '智能垃圾车') ? '#3e6ec7' : ((params.row.car_robot_kind === '智能快递车') ? '#c44474' : ((params.row.car_robot_kind === '智能清扫车') ? '#44b8c4' : '#ff9024')),
-                type: 'dot'
-              }
-            }, params.row.car_no)
-          }
+          value: '佳兆天御',
+          label: '佳兆天御'
         },
         {
-          title: '机器人类别',
-          key: 'car_robot_kind',
-          width: 150,
-          align: 'center'
+          value: '武汉融创',
+          label: '武汉融创'
         },
         {
-          title: '最近通讯时间',
-          key: 'close_time',
-          minWidth: 130,
-          align: 'center'
+          value: '翡翠中心',
+          label: '翡翠中心'
+        },
+        {
+          value: '恒大金碧',
+          label: '恒大金碧'
+        },
+        {
+          value: '红韵天',
+          label: '红韵天'
+        },
+        {
+          value: '地铁尚城',
+          label: '地铁尚城'
+        },
+        {
+          value: '大华华府',
+          label: '大华华府'
+        },
+        {
+          value: '万达旗下',
+          label: '万达旗下'
         }
       ],
-      carInfoData: [
-        {
-          car_no: 'STA3132',
-          car_robot_kind: '智能垃圾车',
-          close_time: '2019-05-28 13:33:51'
-        },
-        {
-          car_no: 'STA2319',
-          car_robot_kind: '智能垃圾车',
-          close_time: '2019-05-28 13:33:51'
-        },
-        {
-          car_no: 'STB2319',
-          car_robot_kind: '智能快递车',
-          close_time: '2019-05-28 15:31:51'
-        },
-        {
-          car_no: 'STC2319',
-          car_robot_kind: '智能清扫车',
-          close_time: '2019-05-28 16:33:33'
-        },
-        {
-          car_no: 'STA2319',
-          car_robot_kind: '智能垃圾车',
-          close_time: '2019-05-28 14:33:27'
-        },
-        {
-          car_no: 'STB2319',
-          car_robot_kind: '智能快递车',
-          close_time: '2019-05-28 13:33:55'
-        },
-        {
-          car_no: 'STD2319',
-          car_robot_kind: '智能巡逻车',
-          close_time: '2019-05-28 16:15:22'
-        },
-        {
-          car_no: 'STA2319',
-          car_robot_kind: '智能垃圾车',
-          close_time: '2019-05-28 11:43:17'
-        }
+      // 公司类别饼状图
+      pieTrashData: [
+        { value: 207, name: '废纸' },
+        { value: 322, name: '玻璃' },
+        { value: 613, name: '金属' },
+        { value: 220, name: '塑料' },
+        { value: 120, name: '布料' }
       ]
     }
   },
   components: {
-    robotRate,
-    cusRate,
+    TrashDetailKind,
+    trashKind,
+    trashCompRate,
+    ChartPie,
+    trashDetail,
     DragDrawer,
     Tables
   },
@@ -204,7 +196,7 @@ export default {
         guardLogo,
         noUseLogo
       ]
-      let myIcon = new BMap.Icon(use_img[parseInt(Math.random() * 4.5)], new BMap.Size(55, 55), {
+      let myIcon = new BMap.Icon(use_img[parseInt(Math.random() * 1)], new BMap.Size(55, 55), {
         offset: new BMap.Size(10, 55), // 指定定位位置
         imageOffset: new BMap.Size(0, 0) // 设置图片偏移
       })
@@ -219,7 +211,7 @@ export default {
   mounted () {
     // 百度地图API初始化
     let map = new BMap.Map('allmap_trash')
-    map.centerAndZoom(new BMap.Point(114.353903, 30.522285), 18)
+    map.centerAndZoom(new BMap.Point(114.358393, 30.518778), 18)
     map.addControl(new BMap.MapTypeControl({
       mapTypes: [
         BMAP_NORMAL_MAP,
@@ -229,16 +221,20 @@ export default {
     map.setCurrentCity('武汉')
     map.enableScrollWheelZoom(true)
 
-    // 创建地图标注
+    // 指定创建地图标注
     for (let i = 0; i < this.point_arr.length; i++) {
       this.addMarker(this.point_arr[i])
+    }
+    // 随机创建地图标注
+    for (let i = 0; i < 60; i++) {
+      this.addMarker(new BMap.Point(114.352006 + Math.random() * 0.014364, 30.520318 - Math.random() * 0.003531))
     }
     this.markerClusterer = new BMapLib.MarkerClusterer(map, { markers: this.markers })
 
     // 定义左下角图例控件类
     function ZoomControl () {
       this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT
-      this.defaultOffset = new BMap.Size(20, 520)
+      this.defaultOffset = new BMap.Size(20, 590)
     }
     ZoomControl.prototype = new BMap.Control()
     ZoomControl.prototype.initialize = function (map) {
@@ -246,11 +242,7 @@ export default {
       let div = document.createElement('div')
       // 添加文字说明
       let img_trash = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #3e6ec7; display: inline-block;"></span><span style="display: inline-block; float: right;">在线垃圾车</span><br></div>'
-      let img_package = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #c44474; display: inline-block;"></span><span style="display: inline-block; float: right;">在线快递车</span><br></div>'
-      let img_sweep = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #44b8c4; display: inline-block;"></span><span style="display: inline-block; float: right;">在线清扫车</span><br></div>'
-      let img_guard = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #ff9024; display: inline-block;"></span><span style="display: inline-block; float: right;">在线巡逻车</span><br></div>'
-      let img_nouse = '<div style="margin-bottom: 5px;"><span style="width: 13px; height: 10px; border-radius: 3px; background-color: #7c818b; display: inline-block;"></span><span style="display: inline-block; float: right;">未连接车辆</span><br></div>'
-      div.innerHTML = img_trash + img_package + img_sweep + img_guard + img_nouse
+      div.innerHTML = img_trash
       // 设置样式
       div.style.cursor = 'pointer'
       div.style.width = '120px'
@@ -270,7 +262,7 @@ export default {
     let loadCount = 1
     map.addEventListener('tilesloaded', function () {
       if (loadCount === 1) {
-        map.setCenter(new BMap.Point(114.353903, 30.522285))
+        map.setCenter(new BMap.Point(114.358393, 30.518778))
       }
       loadCount = loadCount + 1
     })
