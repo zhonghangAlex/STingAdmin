@@ -79,91 +79,91 @@ export default {
       ],
       piUseData: [
         {
-          use_comp: '武地建发玺院地产',
+          use_comp: '武汉建成玉玺地质',
           use_robot_kind: '智能垃圾车',
           peie_num: 50,
-          use_num: 17,
-          left_num: 33,
+          use_num: 47,
+          left_num: 3,
           op_time: '2019-05-24 10:21:11'
         },
         {
-          use_comp: '阳逻万达广场御江（万达旗下）',
+          use_comp: '阳寻万景广场御江',
           use_robot_kind: '智能垃圾车',
           peie_num: 150,
-          use_num: 35,
-          left_num: 115,
+          use_num: 145,
+          left_num: 5,
           op_time: '2019-05-20 14:54:21'
         },
         {
-          use_comp: '阳逻万达广场御江（万达旗下）',
+          use_comp: '阳寻万景广场御江',
           use_robot_kind: '智能快递车',
           peie_num: 50,
-          use_num: 17,
-          left_num: 33,
+          use_num: 47,
+          left_num: 3,
           op_time: '2019-05-26 11:21:11'
         },
         {
-          use_comp: '武地建发玺院地产',
+          use_comp: '武汉建成玉玺地质',
           use_robot_kind: '智能巡逻车',
           peie_num: 50,
-          use_num: 17,
-          left_num: 33,
+          use_num: 47,
+          left_num: 3,
           op_time: '2019-05-21 10:21:11'
         },
         {
           use_comp: '佳兆业广场天御',
           use_robot_kind: '智能垃圾车',
           peie_num: 50,
-          use_num: 17,
-          left_num: 33,
+          use_num: 47,
+          left_num: 3,
           op_time: '2019-05-21 10:21:11'
         },
         {
-          use_comp: '恒大金碧天下',
+          use_comp: '恒为世家国际旅游中心',
           use_robot_kind: '智能快递车',
           peie_num: 40,
-          use_num: 17,
-          left_num: 23,
+          use_num: 37,
+          left_num: 3,
           op_time: '2019-05-25 13:27:11'
         },
         {
           use_comp: '联发国际度假区红韵天',
           use_robot_kind: '智能巡逻车',
           peie_num: 50,
-          use_num: 17,
-          left_num: 13,
+          use_num: 47,
+          left_num: 3,
           op_time: '2019-05-26 10:21:55'
         },
         {
-          use_comp: '武汉融创观澜府',
+          use_comp: '武汉融创国际会务中心',
           use_robot_kind: '智能垃圾车',
           peie_num: 150,
-          use_num: 117,
-          left_num: 33,
+          use_num: 137,
+          left_num: 13,
           op_time: '2019-05-27 15:21:11'
         },
         {
-          use_comp: '武地建发玺院地产',
+          use_comp: '武汉建成玉玺地质',
           use_robot_kind: '智能垃圾车',
           peie_num: 50,
-          use_num: 17,
-          left_num: 13,
+          use_num: 42,
+          left_num: 8,
           op_time: '2019-05-22 15:21:11'
         },
         {
-          use_comp: '武地建发玺院地产',
+          use_comp: '武汉建成玉玺地质',
           use_robot_kind: '智能清洁车',
           peie_num: 50,
-          use_num: 17,
-          left_num: 13,
+          use_num: 46,
+          left_num: 4,
           op_time: '2019-05-21 10:21:11'
         },
         {
-          use_comp: '武汉融创观澜府',
+          use_comp: '武汉融创国际会务中心',
           use_robot_kind: '智能巡逻车',
           peie_num: 60,
-          use_num: 43,
-          left_num: 13,
+          use_num: 53,
+          left_num: 7,
           op_time: '2019-05-21 10:21:11'
         }
       ]

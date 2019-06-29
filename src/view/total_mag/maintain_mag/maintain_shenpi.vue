@@ -185,7 +185,7 @@ export default {
         {
           apply_no: 'DINGD3552',
           apply_kind: '智能巡逻车',
-          apply_comp: '阳逻万达广场御江（万达旗下）',
+          apply_comp: '阳寻万景广场御江',
           apply_num: 1,
           acc_num: 1,
           apply_time: '2019-05-19 15:53:51',
@@ -195,7 +195,7 @@ export default {
         {
           apply_no: 'DINGA6432',
           apply_kind: '智能垃圾车',
-          apply_comp: '阳逻万达广场御江（万达旗下）',
+          apply_comp: '阳寻万景广场御江',
           apply_num: 1,
           acc_num: 1,
           apply_time: '2019-05-07 13:33:51',
@@ -225,7 +225,7 @@ export default {
         {
           apply_no: 'DINGA1352',
           apply_kind: '智能垃圾车',
-          apply_comp: '武地建发玺院地产',
+          apply_comp: '武汉建成玉玺地质',
           apply_num: 1,
           acc_num: 1,
           apply_time: '2019-05-15 15:13:56',
@@ -235,7 +235,7 @@ export default {
         {
           apply_no: 'DINGD1526',
           apply_kind: '智能巡逻车',
-          apply_comp: '武汉融创观澜府',
+          apply_comp: '武汉融创国际会务中心',
           apply_num: 2,
           acc_num: 1,
           apply_time: '2019-05-18 13:33:51',
@@ -255,7 +255,7 @@ export default {
         {
           apply_no: 'DINGA3132',
           apply_kind: '智能垃圾车',
-          apply_comp: '武汉融创观澜府',
+          apply_comp: '武汉融创国际会务中心',
           apply_num: 1,
           acc_num: 0,
           apply_time: '2019-03-18 16:33:51',
@@ -265,7 +265,7 @@ export default {
         {
           apply_no: 'DINGB1132',
           apply_kind: '智能快递车',
-          apply_comp: '武汉融创观澜府',
+          apply_comp: '武汉融创国际会务中心',
           apply_num: 1,
           acc_num: 0,
           apply_time: '2019-03-18 16:33:51',

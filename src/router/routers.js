@@ -388,25 +388,25 @@ export default [
       }
     ]
   },
-  {
-    path: '/error_store',
-    name: 'error_store',
-    meta: {
-      hideInBread: true
-    },
-    component: Main,
-    children: [
-      {
-        path: 'error_store_page',
-        name: 'error_store_page',
-        meta: {
-          icon: 'ios-bug',
-          title: '系统错误测试'
-        },
-        component: () => import('@/view/error-store/error-store.vue')
-      }
-    ]
-  },
+  // {
+  //   path: '/error_store',
+  //   name: 'error_store',
+  //   meta: {
+  //     hideInBread: true
+  //   },
+  //   component: Main,
+  //   children: [
+  //     {
+  //       path: 'error_store_page',
+  //       name: 'error_store_page',
+  //       meta: {
+  //         icon: 'ios-bug',
+  //         title: '系统错误测试'
+  //       },
+  //       component: () => import('@/view/error-store/error-store.vue')
+  //     }
+  //   ]
+  // },
   {
     path: '/error_logger',
     name: 'error_logger',

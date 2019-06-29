@@ -129,7 +129,7 @@ export default {
         {
           car_no: 'STD3552',
           car_robot_kind: '智能巡逻车',
-          own_comp: '阳逻万达广场御江（万达旗下）',
+          own_comp: '阳寻万景广场御江',
           now_area: '万达新科园',
           now_status: '在线正常工作',
           start_work_time: '2019-05-19 15:53:51',
@@ -140,7 +140,7 @@ export default {
         {
           car_no: 'STA6432',
           car_robot_kind: '智能垃圾车',
-          own_comp: '阳逻万达广场御江（万达旗下）',
+          own_comp: '阳寻万景广场御江',
           now_area: '万达新科园',
           now_status: '在线正常工作',
           start_work_time: '2019-05-07 13:33:51',
@@ -173,7 +173,7 @@ export default {
         {
           car_no: 'STA1352',
           car_robot_kind: '智能垃圾车',
-          own_comp: '武地建发玺院地产',
+          own_comp: '武汉建成玉玺地质',
           now_area: '御景名门高档小区',
           now_status: '在线正常工作',
           start_work_time: '2019-05-15 15:13:56',
@@ -206,7 +206,7 @@ export default {
         {
           car_no: 'STA3132',
           car_robot_kind: '智能垃圾车',
-          own_comp: '武汉融创观澜府',
+          own_comp: '武汉融创国际会务中心',
           now_area: '南国花园',
           now_status: '在线正常工作',
           start_work_time: '2019-03-18 16:33:51',

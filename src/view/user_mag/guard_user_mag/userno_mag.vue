@@ -229,7 +229,7 @@ export default {
           user_no: 'USER12971',
           user_status: '禁止使用',
           user_kind: '公司申报',
-          user_comp: '湖州德清立通（韵达）快递',
+          user_comp: '湖州速通立达快递',
           user_op_time: '2019-05-21 13:19:11',
           user_other: '重置密码'
         },
@@ -277,7 +277,7 @@ export default {
           user_no: 'USER12349',
           user_status: '正常使用',
           user_kind: '公司申报',
-          user_comp: '武汉市神龙汽车制造有限公司',
+          user_comp: '武汉市蛟龙汽车制造有限公司',
           user_op_time: '2019-05-29 12:11:11',
           user_other: '无备注信息'
         },

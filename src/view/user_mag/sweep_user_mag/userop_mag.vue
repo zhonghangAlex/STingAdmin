@@ -77,7 +77,7 @@ export default {
       ],
       userOpData: [
         {
-          user_comp: '武地建发玺院地产',
+          user_comp: '武汉建成玉玺地质',
           car_total: 14,
           order_total: 54,
           car_use_time: 1718,
@@ -85,7 +85,7 @@ export default {
           income_rate: 27.55
         },
         {
-          user_comp: '阳逻万达广场御江（万达旗下）',
+          user_comp: '阳逻万达广场御江',
           car_total: 8,
           order_total: 126,
           car_use_time: 3537,
@@ -93,7 +93,7 @@ export default {
           income_rate: 43.63
         },
         {
-          user_comp: '理公馆',
+          user_comp: '建发地产集团',
           car_total: 13,
           order_total: 50,
           car_use_time: 3354,
@@ -117,7 +117,7 @@ export default {
           income_rate: 32.51
         },
         {
-          user_comp: '恒大金碧天下',
+          user_comp: '恒为世家国际旅游中心',
           car_total: 8,
           order_total: 40,
           car_use_time: 1711,
@@ -133,7 +133,7 @@ export default {
           income_rate: 73.51
         },
         {
-          user_comp: '武汉融创观澜府',
+          user_comp: '武汉融创国际会务中心',
           car_total: 16,
           order_total: 150,
           car_use_time: 2117,
@@ -141,7 +141,7 @@ export default {
           income_rate: 22.91
         },
         {
-          user_comp: '武汉市光谷资本大厦',
+          user_comp: '武汉市深度科学研究中心',
           car_total: 15,
           order_total: 44,
           car_use_time: 1119,
@@ -149,7 +149,7 @@ export default {
           income_rate: 45.77
         },
         {
-          user_comp: '武汉市华中科技大学图书馆',
+          user_comp: '武汉市邬所创投',
           car_total: 13,
           order_total: 50,
           car_use_time: 2431,
@@ -157,7 +157,7 @@ export default {
           income_rate: 36.75
         },
         {
-          user_comp: '武汉市V创投大厦',
+          user_comp: '武汉市快链创投大厦',
           car_total: 6,
           order_total: 60,
           car_use_time: 2653,

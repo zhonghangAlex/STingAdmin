@@ -147,8 +147,8 @@ export default {
           label: '翡翠中心'
         },
         {
-          value: '恒大金碧',
-          label: '恒大金碧'
+          value: '恒为旅行',
+          label: '恒为旅行'
         },
         {
           value: '红韵天',
@@ -163,8 +163,8 @@ export default {
           label: '大华华府'
         },
         {
-          value: '万达旗下',
-          label: '万达旗下'
+          value: '百江玉玺',
+          label: '百江玉玺'
         }
       ],
       // 公司类别饼状图

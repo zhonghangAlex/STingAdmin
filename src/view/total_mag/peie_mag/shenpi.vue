@@ -175,7 +175,7 @@ export default {
           apply_num: 18,
           acc_num: 0,
           apply_status: '未审核',
-          apply_kind: '公司申报',
+          apply_kind: '智能垃圾车',
           apply_comp: '武汉市快浪车辆有限公司',
           apply_time: '2019-05-21 10:21:11',
           apply_other: '无备注信息'
@@ -185,8 +185,8 @@ export default {
           apply_num: 5,
           acc_num: 0,
           apply_status: '已拒绝',
-          apply_kind: '公司申报',
-          apply_comp: '湖州德清立通（韵达）快递',
+          apply_kind: '智能垃圾车',
+          apply_comp: '湖州速通立达快递',
           apply_time: '2019-05-21 13:19:11',
           apply_other: '超过额定标准'
         },
@@ -195,7 +195,7 @@ export default {
           apply_num: 118,
           acc_num: 0,
           apply_status: '未审核',
-          apply_kind: '个体申报',
+          apply_kind: '智能清洁车',
           apply_comp: '武汉市南国花园社区管理会',
           apply_time: '2019-05-01 16:53:11',
           apply_other: '无备注信息'
@@ -205,7 +205,7 @@ export default {
           apply_num: 27,
           acc_num: 0,
           apply_status: '未审核',
-          apply_kind: '公司申报',
+          apply_kind: '智能巡逻车',
           apply_comp: '武汉市快浪车辆有限公司',
           apply_time: '2019-05-21 19:21:11',
           apply_other: '无备注信息'
@@ -215,7 +215,7 @@ export default {
           apply_num: 18,
           acc_num: 18,
           apply_status: '审核通过',
-          apply_kind: '公司申报',
+          apply_kind: '智能垃圾车',
           apply_comp: '武汉市智刚车辆科技有限公司',
           apply_time: '2019-05-25 10:11:11',
           apply_other: '无备注信息'
@@ -225,7 +225,7 @@ export default {
           apply_num: 20,
           acc_num: 10,
           apply_status: '审核通过',
-          apply_kind: '公司申报',
+          apply_kind: '智能快递车',
           apply_comp: '武汉市快浪车辆有限公司',
           apply_time: '2019-03-12 09:11:11',
           apply_other: '无备注信息'
@@ -235,8 +235,8 @@ export default {
           apply_num: 60,
           acc_num: 0,
           apply_status: '未审核',
-          apply_kind: '个体申报',
-          apply_comp: '武汉市松涛苑社区管理会',
+          apply_kind: '智能清洁车',
+          apply_comp: '武汉市清雅苑社区管理会',
           apply_time: '2019-05-28 22:17:21',
           apply_other: '无备注信息'
         },
@@ -245,8 +245,8 @@ export default {
           apply_num: 55,
           acc_num: 55,
           apply_status: '审核通过',
-          apply_kind: '公司申报',
-          apply_comp: '武汉市神龙汽车制造有限公司',
+          apply_kind: '智能垃圾车',
+          apply_comp: '武汉市蛟龙汽车制造有限公司',
           apply_time: '2019-05-29 12:11:11',
           apply_other: '无备注信息'
         },
@@ -255,7 +255,7 @@ export default {
           apply_num: 20,
           acc_num: 10,
           apply_status: '审核通过',
-          apply_kind: '公司申报',
+          apply_kind: '智能清洁车',
           apply_comp: '武汉市快浪车辆有限公司',
           apply_time: '2019-03-12 09:11:11',
           apply_other: '无备注信息'
@@ -265,7 +265,7 @@ export default {
           apply_num: 60,
           acc_num: 0,
           apply_status: '未审核',
-          apply_kind: '个体申报',
+          apply_kind: '智能快递车',
           apply_comp: '武汉市君华苑物业管理中心',
           apply_time: '2019-05-28 22:17:21',
           apply_other: '无备注信息'

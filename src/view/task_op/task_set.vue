@@ -181,7 +181,7 @@ export default {
       ],
       taskSetData: [
         {
-          user_comp: '武地建发玺院地产',
+          user_comp: '武汉建成玉玺地质',
           trash_task: true,
           package_task: true,
           security_task: false,
@@ -199,7 +199,7 @@ export default {
           data_task: true
         },
         {
-          user_comp: '湖州德清立通（韵达）快递',
+          user_comp: '湖州速通立达快递',
           trash_task: true,
           package_task: false,
           security_task: true,
@@ -235,7 +235,7 @@ export default {
           data_task: false
         },
         {
-          user_comp: '阳逻万达广场御江（万达旗下）',
+          user_comp: '阳寻万景广场御江',
           trash_task: true,
           package_task: true,
           security_task: true,
@@ -262,7 +262,7 @@ export default {
           data_task: true
         },
         {
-          user_comp: '恒大金碧天下',
+          user_comp: '恒为世家国际旅游中心',
           trash_task: true,
           package_task: true,
           security_task: true,

@@ -53,7 +53,7 @@ export default {
           align: 'center'
         },
         {
-          title: '维护种类',
+          title: '维护种类数目',
           key: 'maintain_kind',
           minWidth: 130,
           align: 'center'
@@ -79,7 +79,7 @@ export default {
       ],
       productData: [
         {
-          cus_comp: '武地建发玺院地产',
+          cus_comp: '武汉建成玉玺地质',
           maintain_index: '2019-311',
           maintain_kind: 4,
           wait_maintain_num: 21,
@@ -95,7 +95,7 @@ export default {
           other: '暂无备注信息'
         },
         {
-          cus_comp: '武汉融创观澜府',
+          cus_comp: '武汉融创国际会务中心',
           maintain_index: '2019-266',
           maintain_kind: 1,
           wait_maintain_num: 15,
@@ -111,7 +111,7 @@ export default {
           other: '暂无备注信息'
         },
         {
-          cus_comp: '恒大金碧天下',
+          cus_comp: '恒为世家国际旅游中心',
           maintain_index: '2019-325',
           maintain_kind: 2,
           wait_maintain_num: 17,
@@ -143,7 +143,7 @@ export default {
           other: '暂无备注信息'
         },
         {
-          cus_comp: '阳逻万达广场御江（万达旗下）',
+          cus_comp: '阳寻万景广场御江',
           maintain_index: '2019-290',
           maintain_kind: 4,
           wait_maintain_num: 47,

@@ -132,7 +132,7 @@ export default {
 
       mind_data: [
         {
-          comp_name: '阳逻万达广场御江（万达旗下）',
+          comp_name: '阳寻万景广场御江',
           mind_num: 37
         },
         {
@@ -148,7 +148,7 @@ export default {
           mind_num: 24
         },
         {
-          comp_name: '恒大金碧天下',
+          comp_name: '恒为世家国际旅游中心',
           mind_num: 20
         },
         {
@@ -160,11 +160,11 @@ export default {
           mind_num: 15
         },
         {
-          comp_name: '武汉融创观澜府',
+          comp_name: '武汉融创国际会务中心',
           mind_num: 15
         },
         {
-          comp_name: '武地建发玺院地产',
+          comp_name: '武汉建成玉玺地质',
           mind_num: 12
         }
       ]
