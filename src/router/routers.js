@@ -62,63 +62,32 @@ export default [
     children: [
       {
         path: 'peie_mag',
-        name: '配额管理',
+        name: '客户配额管理',
         meta: {
           access: ['suoting'],
           icon: 'md-options',
           showAlways: true,
-          title: '配额管理'
+          title: '客户配额管理'
         },
         component: parentView,
         children: [
           {
             path: 'shen_pi',
-            name: '配额审批',
+            name: '客户配额审批',
             meta: {
               icon: 'md-radio-button-on',
-              title: '配额审批'
+              title: '客户配额审批'
             },
             component: () => import('@/view/total_mag/peie_mag/shenpi.vue')
           },
           {
             path: 'use_mag',
-            name: '配额使用管理',
+            name: '客户配额使用管理',
             meta: {
               icon: 'md-radio-button-on',
-              title: '配额使用管理'
+              title: '客户配额使用管理'
             },
             component: () => import('@/view/total_mag/peie_mag/use_mag.vue')
-          }
-        ]
-      },
-      {
-        path: 'table_mag',
-        name: '报表中心',
-        meta: {
-          access: ['suoting'],
-          icon: 'md-stats',
-          showAlways: true,
-          title: '报表中心'
-        },
-        component: parentView,
-        children: [
-          {
-            path: 'car_use_data',
-            name: '车辆使用统计',
-            meta: {
-              icon: 'md-radio-button-on',
-              title: '车辆使用统计'
-            },
-            component: () => import('@/view/total_mag/table_mag/car_use_data.vue')
-          },
-          {
-            path: 'product_maintain_data',
-            name: '产品维护统计',
-            meta: {
-              icon: 'md-radio-button-on',
-              title: '产品维护统计'
-            },
-            component: () => import('@/view/total_mag/table_mag/product_maintain_data.vue')
           }
         ]
       },
@@ -133,6 +102,15 @@ export default [
         },
         component: parentView,
         children: [
+          {
+            path: 'car_use_data',
+            name: '车辆使用统计',
+            meta: {
+              icon: 'md-radio-button-on',
+              title: '车辆使用统计'
+            },
+            component: () => import('@/view/total_mag/table_mag/car_use_data.vue')
+          },
           {
             path: 'car_monitor',
             name: '车辆监控',
@@ -155,23 +133,32 @@ export default [
       },
       {
         path: 'maintain_mag',
-        name: '维护管理',
+        name: '车辆维护管理',
         meta: {
           access: ['suoting'],
           icon: 'ios-construct',
           showAlways: true,
-          title: '维护管理'
+          title: '车辆维护管理'
         },
         component: parentView,
         children: [
           {
             path: 'maintain_shenpi',
-            name: '维护审批',
+            name: '车辆维护审批',
             meta: {
               icon: 'md-radio-button-on',
-              title: '维护审批'
+              title: '车辆维护审批'
             },
             component: () => import('@/view/total_mag/maintain_mag/maintain_shenpi.vue')
+          },
+          {
+            path: 'product_maintain_data',
+            name: '车辆维护统计',
+            meta: {
+              icon: 'md-radio-button-on',
+              title: '车辆维护统计'
+            },
+            component: () => import('@/view/total_mag/table_mag/product_maintain_data.vue')
           }
         ]
       }
