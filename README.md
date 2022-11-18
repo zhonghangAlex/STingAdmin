@@ -5,7 +5,7 @@ STing-admin
 
 ## Introduction
 
-索汀科技后台管理信息系统，基于Vue和iview等多个技术栈，包含多类供应端信息管理、数据可视化、地图业务处理模块（Solting Science and Technology Background Management Information System, which is based on Vue and iView technology stacks, includes many kinds of supply-side information management, data visualization, map business processing modules.）
+索汀科技后台管理信息系统，基于Vue和iview等多个技术栈，包含多类供应端信息管理、数据可视化、地图业务处理模块
 
 ![](https://typora-1256091168.cos.ap-nanjing.myqcloud.com/docPic/202211190345451.jpg)
 ![](https://typora-1256091168.cos.ap-nanjing.myqcloud.com/docPic/202211190346191.jpg)
